@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 function Cart({ cart, updateCart }) {
   /**
@@ -37,6 +38,9 @@ function Cart({ cart, updateCart }) {
             ))}
           </ul>
           <h3>Total: ${total.toFixed(2)}</h3>
+          <Link to="/checkout">
+            <button>Proceed to Checkout</button>
+          </Link>
         </div>
       )}
     </div>

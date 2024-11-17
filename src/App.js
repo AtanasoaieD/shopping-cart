@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import ProductList from "./ProductList";
 import Cart from "./Cart";
+import { BrowserRouter as Router, Route, Routes, Link } from "react-router-dom";
+import Checkout from "./Checkout"
 import "./styles.css"
 
 function App() {
@@ -46,16 +48,45 @@ function App() {
       setCart(updatedCart);
     }
   };
-
   return (
-    <div>
-      <h1>Shopping Cart App</h1>
-      {/* Pass the addToCart function to ProductList */}
-      <ProductList addToCart={addToCart} />
-      {/* Pass the cart and updateCart function to Cart */}
-      <Cart cart={cart} updateCart={updateCart} />
-    </div>
+    <Router>
+      <nav>
+        <Link to="/">Home</Link> | <Link to="/cart">Cart</Link>
+      </nav>
+      <Routes>
+        <Route
+          path="/"
+          element={<ProductList addToCart={addToCart} />}
+        />
+        <Route
+          path="/cart"
+          element={<Cart cart={cart} updateCart={updateCart} />}
+        />
+        <Route
+          path="/checkout"
+          element={<Checkout cart={cart} />}
+        />
+      </Routes>
+    </Router>
   );
 }
+  
+  
+  
+  
+  export default App;
+  
 
-export default App;
+  // return (
+  //   <div>
+  //     <h1>Shopping Cart App</h1>
+  //     {/* Pass the addToCart function to ProductList */}
+  //     <ProductList addToCart={addToCart} />
+  //     {/* Pass the cart and updateCart function to Cart */}
+  //     <Cart cart={cart} updateCart={updateCart} />
+  //   </div>
+  // );
+
+
+
+
