@@ -1,0 +1,147 @@
+/* General Reset */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Arial', sans-serif;
+    background-color: #f9f9f9;
+    color: #333;
+    line-height: 1.6;
+  }
+  
+  /* Header Styling */
+  h1 {
+    text-align: center;
+    color: #4caf50;
+    margin: 20px 0;
+  }
+  
+  h2 {
+    margin-bottom: 10px;
+    color: #555;
+  }
+  
+  /* Buttons */
+  button {
+    background-color: #4caf50;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    font-size: 14px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  button:hover {
+    background-color: #45a049;
+  }
+  
+  button:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+  }
+  
+  /* Layout */
+  .container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+  }
+  
+  /* Product List */
+  ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 15px;
+    border-bottom: 1px solid #ddd;
+  }
+  
+  li:last-child {
+    border-bottom: none;
+  }
+  
+  .product-name {
+    font-weight: bold;
+  }
+  
+  .product-price {
+    font-size: 14px;
+    color: #777;
+  }
+  
+  /* Shopping Cart */
+  .cart {
+    margin-top: 20px;
+  }
+  
+  .cart ul {
+    padding: 0;
+  }
+  
+  .cart li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    background-color: #f7f7f7;
+    margin-bottom: 10px;
+    border-radius: 5px;
+  }
+  
+  .cart li:last-child {
+    margin-bottom: 0;
+  }
+  
+  .cart-item {
+    display: flex;
+    align-items: center;
+  }
+  
+  .cart-item input[type='number'] {
+    width: 50px;
+    margin-left: 10px;
+    padding: 5px;
+    font-size: 14px;
+  }
+  
+  .cart-item button {
+    margin-left: 10px;
+  }
+  
+  /* Total Section */
+  .total {
+    margin-top: 20px;
+    font-size: 18px;
+    font-weight: bold;
+    text-align: right;
+  }
+  
+  .total span {
+    color: #4caf50;
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 600px) {
+    li {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+  
+    .cart-item input[type='number'] {
+      margin-top: 10px;
+    }
+  
+    .total {
+      text-align: center;
+    }
+  }
+  
