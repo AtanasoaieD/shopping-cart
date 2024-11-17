@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import ProductList from "./ProductList";
 import Cart from "./Cart";
+import "./styles.css"
 
 function App() {
   // Holds the items in the shopping cart
