@@ -2,7 +2,9 @@ import React, { useState } from "react";
 import ProductList from "./ProductList";
 import Cart from "./Cart";
 import { BrowserRouter as Router, Route, Routes, Link } from "react-router-dom";
-import Checkout from "./Checkout"
+import Checkout from "./Checkout";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faCartShopping, faH, faHouse } from "@fortawesome/free-solid-svg-icons";
 import "./styles.css"
 
 function App() {
@@ -51,7 +53,8 @@ function App() {
   return (
     <Router>
       <nav>
-        <Link to="/">Home</Link> | <Link to="/cart">Cart</Link>
+        <Link to="/"><FontAwesomeIcon icon={faHouse}/>Home</Link> | <Link to="/cart">
+        <FontAwesomeIcon icon={faCartShopping} />Cart</Link>
       </nav>
       <Routes>
         <Route

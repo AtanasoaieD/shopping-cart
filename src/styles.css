@@ -1,147 +1,159 @@
-/* General Reset */
-body {
-    margin: 0;
-    padding: 0;
-    font-family: 'Arial', sans-serif;
-    background-color: #f9f9f9;
-    color: #333;
-    line-height: 1.6;
+/* General container styling */
+.cart-container {
+  padding: 20px;
+  font-family: Arial, sans-serif;
+}
+
+/* Align the cart title and icon */
+.cart-header {
+  display: flex; /* Flexbox for alignment */
+  justify-content: space-between; /* Push items to opposite sides */
+  align-items: center; /* Vertically align items */
+  border-bottom: 1px solid #ddd; /* Optional: Add a separator */
+  padding-bottom: 10px;
+}
+
+/* Cart title styling */
+.cart-header h2 {
+  margin: 0; /* Remove default margin */
+  font-size: 1.5rem; /* Adjust size */
+}
+
+/* Cart icon styling */
+.cart-icon {
+  font-size: 24px; /* Make the icon larger */
+  color: #007bff; /* Primary blue color */
+  cursor: pointer; /* Pointer cursor for clickable effect */
+}
+
+/* Hover effect for the cart icon */
+.cart-icon:hover {
+  color: #0056b3; /* Darker blue on hover */
+}
+
+/* Styling for the cart items list */
+ul {
+  list-style: none; /* Remove default bullet points */
+  padding: 0;
+  margin: 20px 0;
+}
+
+/* Individual cart item styling */
+li {
+  display: flex; /* Align name, quantity, and buttons in a row */
+  justify-content: space-between; /* Space out content */
+  margin-bottom: 10px;
+  padding: 10px 0;
+  border-bottom: 1px solid #ddd;
+}
+
+/* Buttons and inputs */
+button {
+  background-color: #dc3545; /* Red for remove button */
+  color: #fff;
+  border: none;
+  padding: 5px 10px;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+button:hover {
+  background-color: #c82333; /* Darker red on hover */
+}
+
+input[type="number"] {
+  width: 50px;
+  text-align: center;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+/* Total section */
+h3 {
+  text-align: right; /* Align total to the right */
+  margin-top: 20px;
+  font-size: 1.25rem;
+  color: #333;
+}
+
+/* checkout page */
+/* Checkout Page Container */
+.checkout-container {
+  max-width: 600px;
+  margin: 50px auto; /* Center horizontally and add spacing */
+  padding: 20px;
+  background-color: #f9f9f9;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  font-family: Arial, sans-serif;
+}
+
+/* Page Title */
+.checkout-container h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  font-size: 1.8rem;
+  color: #333;
+}
+
+/* Form Styling */
+.checkout-form {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Form Group */
+.form-group {
+  margin-bottom: 15px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+  color: #555;
+}
+
+.form-group input,
+.form-group textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 1rem;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+  outline: none;
+  border-color: #007bff;
+  box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+}
+
+/* Submit Button */
+.checkout-button {
+  padding: 10px 15px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  font-size: 1rem;
+  cursor: pointer;
+  margin-top: 20px;
+}
+
+.checkout-button:hover {
+  background-color: #0056b3;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .checkout-container {
+    padding: 15px;
   }
-  
-  /* Header Styling */
-  h1 {
-    text-align: center;
-    color: #4caf50;
-    margin: 20px 0;
+
+  .checkout-container h2 {
+    font-size: 1.5rem;
   }
-  
-  h2 {
-    margin-bottom: 10px;
-    color: #555;
-  }
-  
-  /* Buttons */
-  button {
-    background-color: #4caf50;
-    color: white;
-    border: none;
-    padding: 10px 15px;
-    font-size: 14px;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-  }
-  
-  button:hover {
-    background-color: #45a049;
-  }
-  
-  button:disabled {
-    background-color: #ccc;
-    cursor: not-allowed;
-  }
-  
-  /* Layout */
-  .container {
-    max-width: 800px;
-    margin: 0 auto;
-    padding: 20px;
-    background-color: #fff;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    border-radius: 10px;
-  }
-  
-  /* Product List */
-  ul {
-    list-style: none;
-    padding: 0;
-  }
-  
-  li {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 10px 15px;
-    border-bottom: 1px solid #ddd;
-  }
-  
-  li:last-child {
-    border-bottom: none;
-  }
-  
-  .product-name {
-    font-weight: bold;
-  }
-  
-  .product-price {
-    font-size: 14px;
-    color: #777;
-  }
-  
-  /* Shopping Cart */
-  .cart {
-    margin-top: 20px;
-  }
-  
-  .cart ul {
-    padding: 0;
-  }
-  
-  .cart li {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 10px;
-    background-color: #f7f7f7;
-    margin-bottom: 10px;
-    border-radius: 5px;
-  }
-  
-  .cart li:last-child {
-    margin-bottom: 0;
-  }
-  
-  .cart-item {
-    display: flex;
-    align-items: center;
-  }
-  
-  .cart-item input[type='number'] {
-    width: 50px;
-    margin-left: 10px;
-    padding: 5px;
-    font-size: 14px;
-  }
-  
-  .cart-item button {
-    margin-left: 10px;
-  }
-  
-  /* Total Section */
-  .total {
-    margin-top: 20px;
-    font-size: 18px;
-    font-weight: bold;
-    text-align: right;
-  }
-  
-  .total span {
-    color: #4caf50;
-  }
-  
-  /* Responsive Design */
-  @media (max-width: 600px) {
-    li {
-      flex-direction: column;
-      align-items: flex-start;
-    }
-  
-    .cart-item input[type='number'] {
-      margin-top: 10px;
-    }
-  
-    .total {
-      text-align: center;
-    }
-  }
-  
+}
