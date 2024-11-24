@@ -1,7 +1,28 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+
+body {
+  font-family: 'Poppins', sans-serif;
+}
+
+.product-name {
+  font-family: 'Poppins', sans-serif;
+  font-size: 1.2rem; /* Adjust size */
+  font-weight: 600; /* Semi-bold for emphasis */
+  color: #333; /* Dark text color for readability */
+}
+
+.product-description,
+.product-price {
+  font-family: 'Poppins', sans-serif;
+  font-size: 1rem;
+  font-weight: 400; /* Regular weight */
+  color: #555; /* Slightly lighter color for secondary text */
+}
+
 /* General container styling */
 .cart-container {
   padding: 20px;
-  font-family: Arial, sans-serif;
+  font-family: "Lato", sans-serif;
 }
 
 /* Align the cart title and icon */
@@ -49,7 +70,7 @@ li {
 
 /* Buttons and inputs */
 button {
-  background-color: #dc3545; /* Red for remove button */
+  background-color: #70e834; /* Red for remove button */
   color: #fff;
   border: none;
   padding: 5px 10px;
@@ -74,6 +95,7 @@ h3 {
   margin-top: 20px;
   font-size: 1.25rem;
   color: #333;
+  font-family: 'Gill Sans', 'Gill Sans MT',;
 }
 
 /* checkout page */
@@ -86,7 +108,7 @@ h3 {
   border: 1px solid #ddd;
   border-radius: 8px;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-  font-family: Arial, sans-serif;
+  font-family: "Lato", sans-serif;
 }
 
 /* Page Title */
@@ -156,4 +178,40 @@ h3 {
   .checkout-container h2 {
     font-size: 1.5rem;
   }
+}
+.success-message {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 200px; /* Adjust as needed for spacing */
+  text-align: center; /* Center text horizontally */
+  border: 2px solid #007bff; /* Optional styling for emphasis */
+  border-radius: 10px;
+  background-color: #f0f8ff; /* Light background for emphasis */
+  margin: 20px auto; /* Center the box within the container */
+  width: 80%; /* Adjust to control width */
+}
+
+.purchase-message {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 200px; /* Adjust as needed for spacing */
+  text-align: center; /* Center text horizontally */
+  border: 2px solid #007bff; /* Optional styling for emphasis */
+  border-radius: 10px;
+  background-color: #f0f8ff; /* Light background for emphasis */
+  margin: 20px auto; /* Center the box within the container */
+  width: 80%; /* Adjust to control width */
+}
+
+.purchase-message h3 {
+  color: #28a745; /* Green for success */
+  margin: 0 0 10px;
+}
+
+.purchase-message p {
+  color: #555; /* Subtle gray for the description */
 }

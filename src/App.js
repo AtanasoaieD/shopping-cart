@@ -1,11 +1,12 @@
 import React, { useState } from "react";
+import { BrowserRouter as Router, Route, Routes, Link } from "react-router-dom";
 import ProductList from "./ProductList";
 import Cart from "./Cart";
-import { BrowserRouter as Router, Route, Routes, Link } from "react-router-dom";
 import Checkout from "./Checkout";
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faCartShopping, faH, faHouse } from "@fortawesome/free-solid-svg-icons";
-import "./styles.css"
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faCartShopping, faHouse } from "@fortawesome/free-solid-svg-icons";
+
+import "./styles.css";
 
 function App() {
   // Holds the items in the shopping cart
@@ -17,7 +18,6 @@ function App() {
    * Otherwise, add it to the cart with a quantity of 1.
    */
   const addToCart = (product) => {
-    // Check if the product is already in the cart
     const existingItem = cart.find((item) => item.id === product.id);
     if (existingItem) {
       // Update the quantity of the existing product
@@ -39,57 +39,51 @@ function App() {
    */
   const updateCart = (productId, quantity) => {
     if (quantity <= 0) {
-      // Remove the product if quantity is 0 or less
       const updatedCart = cart.filter((item) => item.id !== productId);
       setCart(updatedCart);
     } else {
-      // Update the product quantity
       const updatedCart = cart.map((item) =>
         item.id === productId ? { ...item, quantity } : item
       );
       setCart(updatedCart);
     }
   };
+
   return (
     <Router>
+      {/* Navigation Bar */}
       <nav>
-        <Link to="/"><FontAwesomeIcon icon={faHouse}/>Home</Link> | <Link to="/cart">
-        <FontAwesomeIcon icon={faCartShopping} />Cart</Link>
+        <Link to="/">
+          <FontAwesomeIcon icon={faHouse} /> Home
+        </Link>{" "}
+        |{" "}
+        <Link to="/cart">
+          <FontAwesomeIcon icon={faCartShopping} /> Cart
+        </Link>
       </nav>
+
+      {/* Define Routes */}
       <Routes>
+        {/* Home Page - Product List */}
         <Route
           path="/"
           element={<ProductList addToCart={addToCart} />}
         />
+
+        {/* Cart Page */}
         <Route
           path="/cart"
           element={<Cart cart={cart} updateCart={updateCart} />}
         />
+
+        {/* Checkout Page */}
         <Route
           path="/checkout"
-          element={<Checkout cart={cart} />}
+          element={<Checkout cart={cart} setCart={setCart} />}
         />
       </Routes>
     </Router>
   );
 }
-  
-  
-  
-  
-  export default App;
-  
 
-  // return (
-  //   <div>
-  //     <h1>Shopping Cart App</h1>
-  //     {/* Pass the addToCart function to ProductList */}
-  //     <ProductList addToCart={addToCart} />
-  //     {/* Pass the cart and updateCart function to Cart */}
-  //     <Cart cart={cart} updateCart={updateCart} />
-  //   </div>
-  // );
-
-
-
-
+export default App;
