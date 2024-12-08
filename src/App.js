@@ -1,26 +1,20 @@
 import React, { useState } from "react";
-import { BrowserRouter as Router, Route, Routes, Link } from "react-router-dom";
+import { BrowserRouter as Router, Route, Routes, Link, useLocation } from "react-router-dom";
 import ProductList from "./ProductList";
 import Cart from "./Cart";
 import Checkout from "./Checkout";
+import WelcomePage from "./WelcomePage";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCartShopping, faHouse } from "@fortawesome/free-solid-svg-icons";
 
 import "./styles.css";
 
 function App() {
-  // Holds the items in the shopping cart
   const [cart, setCart] = useState([]);
 
-  /**
-   * Add a product to the cart.
-   * If the product is already in the cart, increase its quantity.
-   * Otherwise, add it to the cart with a quantity of 1.
-   */
   const addToCart = (product) => {
     const existingItem = cart.find((item) => item.id === product.id);
     if (existingItem) {
-      // Update the quantity of the existing product
       const updatedCart = cart.map((item) =>
         item.id === product.id
           ? { ...item, quantity: item.quantity + 1 }
@@ -28,15 +22,10 @@ function App() {
       );
       setCart(updatedCart);
     } else {
-      // Add the new product to the cart
       setCart([...cart, { ...product, quantity: 1 }]);
     }
   };
 
-  /**
-   * Update the quantity of a product in the cart.
-   * If the quantity is set to 0, remove the product from the cart.
-   */
   const updateCart = (productId, quantity) => {
     if (quantity <= 0) {
       const updatedCart = cart.filter((item) => item.id !== productId);
@@ -49,9 +38,16 @@ function App() {
     }
   };
 
-  return (
-    <Router>
-      {/* Navigation Bar */}
+  // Component to conditionally render the navigation bar
+  const Navbar = () => {
+    const location = useLocation();
+
+    // Hide nav on the welcome page ("/")
+    if (location.pathname === "/") {
+      return null;
+    }
+
+    return (
       <nav>
         <Link to="/">
           <FontAwesomeIcon icon={faHouse} /> Home
@@ -61,22 +57,20 @@ function App() {
           <FontAwesomeIcon icon={faCartShopping} /> Cart
         </Link>
       </nav>
+    );
+  };
 
-      {/* Define Routes */}
+  return (
+    <Router>
+      <Navbar />
+
       <Routes>
-        {/* Home Page - Product List */}
-        <Route
-          path="/"
-          element={<ProductList addToCart={addToCart} />}
-        />
-
-        {/* Cart Page */}
+        <Route path="/" element={<WelcomePage />} />
+        <Route path="/products" element={<ProductList addToCart={addToCart} />} />
         <Route
           path="/cart"
           element={<Cart cart={cart} updateCart={updateCart} />}
         />
-
-        {/* Checkout Page */}
         <Route
           path="/checkout"
           element={<Checkout cart={cart} setCart={setCart} />}
