@@ -122,20 +122,15 @@ const ProductList = ({addToCart}) => {
     <div>
       {products.map((product) => (
         <div key={product.id} style={{ border: "1px solid #ccc", padding: "10px", margin: "10px" }}>
-          <img src={product.image} alt={product.name} style={{ width: "150px", height: "150px" }} />
+          <img src={product.image} 
+  alt={product.name} 
+  className="product-image"/>
           <h3>{product.name}</h3>
           <p>{product.description}</p>
           <p>${product.price}</p>
           {/* Add to Cart Button */}
           <button
-            style={{
-              backgroundColor: "#007bff",
-              color: "#fff",
-              border: "none",
-              padding: "10px 15px",
-              cursor: "pointer",
-              borderRadius: "5px",
-            }}
+            className="add-to-cart-button"
             onClick={() => addToCart(product)}
           >
             Add to Cart
