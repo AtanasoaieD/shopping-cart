@@ -43,13 +43,13 @@ body {
 /* Cart icon styling */
 .cart-icon {
   font-size: 24px; /* Make the icon larger */
-  color: #007bff; /* Primary blue color */
+  color: #04fdc3; /* Primary blue color */
   cursor: pointer; /* Pointer cursor for clickable effect */
 }
 
 /* Hover effect for the cart icon */
 .cart-icon:hover {
-  color: #0056b3; /* Darker blue on hover */
+  color: #940de8; /* Darker blue on hover */
 }
 
 /* Styling for the cart items list */
@@ -250,5 +250,5 @@ h3 {
 }
 
 .start-shopping-button:hover {
-  background-color: #0056b3;
+  background-color: #e706d8;
 }
