@@ -277,3 +277,40 @@ h3 {
   transform: scale(1.05); /* Slightly enlarge the button */
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Add a shadow for depth */
 }
+
+nav {
+  display: flex;
+  justify-content: center; /* Center-align the nav items */
+  gap: 20px; /* Space between the buttons */
+  background-color: #f8f9fa; /* Light background for the nav */
+  padding: 10px 0;
+  border-bottom: 2px solid #ddd; /* Optional border for separation */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Optional shadow for depth */
+}
+
+.nav-button {
+  text-decoration: none; /* Remove underline from links */
+  color: #fff; /* White text */
+  background-color: #007bff; /* Primary blue color */
+  border: none;
+  padding: 10px 15px;
+  font-size: 16px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  display: flex; /* Align icon and text */
+  align-items: center;
+  gap: 8px; /* Space between icon and text */
+}
+.shop-name {
+  font-size: 24px; /* Larger font for shop name */
+  font-weight: bold;
+  color: #007bff; /* Blue color for branding */
+  margin-right: auto; /* Push navigation buttons to the right */
+}
+
+.nav-button:hover {
+  background-color: #0056b3; /* Darker blue on hover */
+  transform: scale(1.05); /* Slight zoom effect */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Add shadow for hover */
+}

@@ -49,13 +49,14 @@ function App() {
 
     return (
       <nav>
-        <Link to="/">
-          <FontAwesomeIcon icon={faHouse} /> Home
-        </Link>{" "}
+         <div className="shop-name">EZY</div>
+       <Link to="/" className="nav-button">
+    <FontAwesomeIcon icon={faHouse} /> Home
+  </Link>
         |{" "}
-        <Link to="/cart">
-          <FontAwesomeIcon icon={faCartShopping} /> Cart
-        </Link>
+        <Link to="/cart" className="nav-button">
+    <FontAwesomeIcon icon={faCartShopping} /> Cart
+  </Link>
       </nav>
     );
   };
