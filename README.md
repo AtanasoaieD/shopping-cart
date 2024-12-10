@@ -7,12 +7,12 @@ E-commerce website where user can select between different products, add them to
 ![alt text](https://github.com/AtanasoaieD/shopping-cart/blob/main/src/finals/5.png)
 
 Features
-## Homepage: A welcoming screen with a "Start Shopping" button.
-### Product Listing: Displays a list of 12 electric products with images, descriptions, and prices.
+<h3>Homepage</h3>: A welcoming screen with a "Start Shopping" button.
+<h3> Product Listing</h3>: Displays a list of 12 electric products with images, descriptions, and prices.
 <h3> Add to Cart</h3>: Easily add items to the shopping cart.
-# Cart Page: View items in the cart, update quantities, or remove products.
-# Checkout Page: Complete the purchase with a confirmation message.
-# Responsive Design: Styled for desktop and mobile views using CSS.
+<h3> Cart Page</h3>: View items in the cart, update quantities, or remove products.
+<h3>Checkout Page</h3>: Complete the purchase with a confirmation message.
+<h3> Responsive Design</h3>: Styled for desktop and mobile views using CSS.
 
 
 Technologies Used
