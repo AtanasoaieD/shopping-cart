@@ -16,7 +16,7 @@ E-commerce website where user can select between different products, add them to
 
 
 <h2>Technologies Used</h2>
-<h3>React: Front-end library for building interactive user interfaces.</h3>
-<h3>React Router: For seamless navigation between pages.</h3>
-<h3>Font Awesome: Icons for buttons and navigation.</h3>
-<h3>CSS: Custom styling for a polished appearance.</h3>
+<h3>React: </h3>Front-end library for building interactive user interfaces.
+<h3>React Router:</h3> For seamless navigation between pages.
+<h3>Font Awesome:</h3> Icons for buttons and navigation.
+<h3>CSS: </h3>Custom styling for a polished appearance.
