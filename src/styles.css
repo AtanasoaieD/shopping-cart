@@ -314,3 +314,28 @@ nav {
   transform: scale(1.05); /* Slight zoom effect */
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Add shadow for hover */
 }
+
+.product-image {
+  width: 100%;
+  max-width: 150px; /* Ensures image doesn’t stretch beyond a reasonable size */
+  height: auto;     /* Maintains the aspect ratio */
+  border-radius: 5px; /* Optional rounded corners */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Adds a nice shadow effect */
+  object-fit: contain; /* Keeps the entire image visible within the bounding box */
+}
+.add-to-cart-button {
+  background-color: #007bff; /* Primary button color */
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  font-size: 16px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease; /* Smooth transition */
+}
+
+.add-to-cart-button:hover {
+  background-color: #0056b3; /* Darker shade on hover */
+  transform: scale(1.05); /* Slightly enlarge the button */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Add a shadow for depth */
+}
